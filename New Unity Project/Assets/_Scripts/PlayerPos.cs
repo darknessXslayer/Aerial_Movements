@@ -1,22 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.SceneManagement;
 using UnityEngine;
 
-public class Player_Death : MonoBehaviour
+public class PlayerPos : MonoBehaviour
 {
+
     private GameMaster gm;
 
-    private void Start()
+
+    // Start is called before the first frame update
+    void Start()
     {
         gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
         transform.position = gm.lastCheckPos;
     }
 
-
-    private void OnTriggerEnter(Collider other)
+    // Update is called once per frame
+    void Update()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
     }
 }
